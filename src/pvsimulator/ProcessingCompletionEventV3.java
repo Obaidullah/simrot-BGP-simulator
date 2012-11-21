@@ -92,10 +92,10 @@ public class ProcessingCompletionEventV3 extends Unit{
                         rib.removeEntry(withdrawns.get(i),peer);
   
                         //System.out.print("\nwithwrawal prefix "+this.message.getWithdrawans()+" at node "+this.processor.getAS()+",  TIME:   "+kernel.getTime()+"\n");//------------------------------------------------------------------------------
-                       	bufout.write("Withdrawal \t" +this.message.getWithdrawans()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
+                       	bufout.write("Remove \t" +this.message.getWithdrawans()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
                         bufout.flush();
                         
-                        buffer.write("Withdrawal \t" +this.message.getWithdrawans()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
+                        buffer.write("Remove \t" +this.message.getWithdrawans()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
                         buffer.flush();
 	
                         if(bestPathNextHop == peer) {
@@ -191,10 +191,10 @@ public class ProcessingCompletionEventV3 extends Unit{
                         rib.addEntry(prefix,src,path);
                         //System.out.print("\nannouncement prefix "+this.message.getAnnouncedPrefix()+" at node "+this.processor.getAS()+",  TIME:   "+kernel.getTime()+"\n");//------------------------------------------------------------------------------
                         try{
-                        	bufout.write("Announcement \t " +this.message.getAnnouncedPrefix()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
+                        	bufout.write("Insert \t " +this.message.getAnnouncedPrefix()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
                             bufout.flush();
                             
-                            buffer.write("Announcement \t " +this.message.getAnnouncedPrefix()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
+                            buffer.write("Insert \t " +this.message.getAnnouncedPrefix()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
                             buffer.flush();
 	
                         }

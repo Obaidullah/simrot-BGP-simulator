@@ -53,8 +53,8 @@ public class WriteLogsV3 extends Unit{
             ps.println(MessagesMonitor.total);
 
             /* Rashed */
-            //FileWriter fstream = new FileWriter("timestamps.txt", true);
-            //BufferedWriter bufout = new BufferedWriter(fstream);
+            FileWriter fstream = new FileWriter("NodeRoutingTable.txt", true);
+            BufferedWriter bufout = new BufferedWriter(fstream);
 
             for(int i=1;i<=numberOfNodes;i++) {
 
@@ -99,8 +99,9 @@ public class WriteLogsV3 extends Unit{
                         getTime.getProcessingTime(kernel);*/
                         //bufout.write("Update node " +i + ": " + getTime.getProcessingTime(kernel) + "\n");
                         //bufout.write("Update node " +i + ": " + System.currentTimeMillis()+ "\n");
-                    //bufout.write("RIB of node " +i+ ": \n" + node.getRib() + "\n");
-                    //bufout.flush();
+                    bufout.write("RIB of node " +i+ ": \n\n" + node.getRib() + "\n");
+                    bufout.flush();
+                    
                     //}
 
                 }

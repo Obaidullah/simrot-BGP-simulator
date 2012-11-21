@@ -59,8 +59,8 @@ public class Main {
         return usedMemory;
     }
     public static void main(String[] args) throws Exception {
+    	/* ADDED BY GIULIO */
     	Topology.parseTopologyV2(args[0],false);
-    	//File[] dumpfiles=null;
     	for(int i=1;i<=Topology.numberOfNodes;i++)
         {
     		String nameOfFile="Node_"+i+"_.txt";
@@ -69,6 +69,9 @@ public class Main {
         }
     	File ribchanges = new File("NodeChangesAtExactTime.txt");
     	ribchanges.delete();
+    	File finalRoutingTable = new File("NodeRoutingTable.txt");
+    	finalRoutingTable.delete();
+    	/* THIS IS IT */
         long start = System.currentTimeMillis();
         long startingMemoryUse = getUsedMemory();
         System.out.println("SMemory="+startingMemoryUse);

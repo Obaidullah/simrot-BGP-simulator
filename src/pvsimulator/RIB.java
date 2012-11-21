@@ -339,12 +339,12 @@ public class RIB{
         TIntArrayList prefixes = getPrefixes();
         prefixes.sort();
         for(int i=0;i<prefixes.size();i++) {
-            result+="prefix "+prefixes.get(i)+"\n";
+            result+="\tprefix "+prefixes.get(i)+"\n";  //Modified this line: the original is: result+="prefix "+prefixes.get(i)+"\n";
             for(int j=0;j<rib.listOfRIBS.size();j++) {
                 AdjRIBIn ribIn = (AdjRIBIn)(rib.listOfRIBS.get(j));
                 if(ribIn.indexes.contains(prefixes.get(i))) {
                     RouteEntry entry = (RouteEntry)(ribIn.RouteEntries.get(ribIn.indexes.indexOf(prefixes.get(i))));
-                    result+=ribIn.peer+"\t"+entry.toString()+"\n";
+                    result+="\t\t"+ribIn.peer+"\t"+entry.toString()+"\n";  //Modified this line: the original is: result+=ribIn.peer+"\t"+entry.toString()+"\n";
                 }
             }
         }

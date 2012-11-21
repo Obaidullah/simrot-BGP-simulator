@@ -1,1 +1,1 @@
-Announcement 	 110	 At node3	 TIME: 	71.63820869574764
+Insert 	 110	 At node3	 TIME: 	71.63820869574764
