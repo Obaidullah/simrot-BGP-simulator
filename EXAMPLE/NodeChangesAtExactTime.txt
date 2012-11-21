@@ -1,0 +1,6 @@
+Announcement 	 110	 At node3	 TIME: 	71.63820869574764
+Announcement 	 110	 At node5	 TIME: 	72.5160442363588
+Announcement 	 110	 At node2	 TIME: 	87.31987653739287
+Announcement 	 110	 At node4	 TIME: 	98.88049392288522
+Announcement 	 110	 At node6	 TIME: 	114.5707210725561
+Announcement 	 110	 At node7	 TIME: 	117.09716570880592
