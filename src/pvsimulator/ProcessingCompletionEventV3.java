@@ -48,7 +48,7 @@ public class ProcessingCompletionEventV3 extends Unit{
         if(message.getType()==Values.interruptMessage) {
             interruptMessageHandler(message,processor);
             //-----------------------------------------------//
-            //System.out.print("\n\nNODE "+this.processor.getAS()+"     TIME:"+kernel.getTime()+"\n"+this.processor.getRib());
+            System.out.print("\n\nNODE "+this.processor.getAS()+"     TIME:"+kernel.getTime()+"\n"+this.processor.getRib());
             //-----------------------------------------------//
         } else {
             
