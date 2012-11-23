@@ -48,7 +48,7 @@ public class ProcessingCompletionEventV3 extends Unit{
         if(message.getType()==Values.interruptMessage) {
             interruptMessageHandler(message,processor);
             //-----------------------------------------------//
-            System.out.print("\n\nNODE "+this.processor.getAS()+"     TIME:"+kernel.getTime()+"\n"+this.processor.getRib());
+            //System.out.print("\n\nNODE "+this.processor.getAS()+"     TIME:"+kernel.getTime()+"\n"+this.processor.getRib());
             //-----------------------------------------------//
         } else {
             
@@ -150,7 +150,9 @@ public class ProcessingCompletionEventV3 extends Unit{
                             System.out.print("\nreplace prefix "+this.message.getAnnouncedPrefix()+" at node "+this.processor.getAS()+",  TIME:   "+kernel.getTime()+"\n");//------------------------------------------------------------------------------
                         } else {
                             rib.addEntry(prefix,src,path);
-                            System.out.print("\nannouncement prefix "+this.message.getAnnouncedPrefix()+" at node "+this.processor.getAS()+",  TIME:   "+kernel.getTime()+"\n");//------------------------------------------------------------------------------
+                            buffer.write("2\t"+GetTime.getNextSchedule(kernel)+"\n");
+                            buffer.flush();
+                            //System.out.print("\nannouncement prefix "+this.message.getAnnouncedPrefix()+" at node "+this.processor.getAS()+",  TIME:   "+kernel.getTime()+"\n");//------------------------------------------------------------------------------
                             
                         }
                         TIntArrayList toBeExportedTOStateful = rib.exportedTO(oldPathNextHop,processor);
