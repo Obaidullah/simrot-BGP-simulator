@@ -95,7 +95,7 @@ public class ProcessingCompletionEventV3 extends Unit{
                        	bufout.write("Remove \t" +this.message.getWithdrawans()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
                         bufout.flush();
                         
-                        buffer.write("Remove \t" +this.message.getWithdrawans()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
+                        buffer.write("1\t"+GetTime.getNextSchedule(kernel)+"\n");
                         buffer.flush();
 	
                         if(bestPathNextHop == peer) {
@@ -194,7 +194,7 @@ public class ProcessingCompletionEventV3 extends Unit{
                         	bufout.write("Insert \t " +this.message.getAnnouncedPrefix()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
                             bufout.flush();
                             
-                            buffer.write("Insert \t " +this.message.getAnnouncedPrefix()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
+                            buffer.write("2\t"+GetTime.getNextSchedule(kernel)+"\n");
                             buffer.flush();
 	
                         }
