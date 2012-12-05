@@ -92,7 +92,7 @@ public class ProcessingCompletionEventV3 extends Unit{
                         rib.removeEntry(withdrawns.get(i),peer);
   
                         //System.out.print("\nwithwrawal prefix "+this.message.getWithdrawans()+" at node "+this.processor.getAS()+",  TIME:   "+kernel.getTime()+"\n");//------------------------------------------------------------------------------
-                       	bufout.write("Remove \t" +this.message.getWithdrawans()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
+                       	bufout.write("1\t"+GetTime.getNextSchedule(kernel)+"\n");
                         bufout.flush();
                         
                         buffer.write("1\t"+GetTime.getNextSchedule(kernel)+"\n");
@@ -193,7 +193,7 @@ public class ProcessingCompletionEventV3 extends Unit{
                         rib.addEntry(prefix,src,path);
                         //System.out.print("\nannouncement prefix "+this.message.getAnnouncedPrefix()+" at node "+this.processor.getAS()+",  TIME:   "+kernel.getTime()+"\n");//------------------------------------------------------------------------------
                         try{
-                        	bufout.write("Insert \t " +this.message.getAnnouncedPrefix()+"\t At node"+this.processor.getAS()+"\t TIME: \t"+GetTime.getNextSchedule(kernel)+"\n");
+                        	bufout.write("2\t"+GetTime.getNextSchedule(kernel)+"\n");
                             bufout.flush();
                             
                             buffer.write("2\t"+GetTime.getNextSchedule(kernel)+"\n");

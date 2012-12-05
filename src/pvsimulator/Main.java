@@ -71,6 +71,8 @@ public class Main {
     	ribchanges.delete();
     	File finalRoutingTable = new File("NodeRoutingTable.txt");
     	finalRoutingTable.delete();
+    	File event_generator = new File("generated_event.txt");
+    	event_generator.delete();
     	/* THIS IS IT */
         long start = System.currentTimeMillis();
         long startingMemoryUse = getUsedMemory();
