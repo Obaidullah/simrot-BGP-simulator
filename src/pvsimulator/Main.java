@@ -73,6 +73,7 @@ public class Main {
     	finalRoutingTable.delete();
     	File event_generator = new File("generated_event.txt");
     	event_generator.delete();
+    	int EventsGenerator = Integer.parseInt(args[9]);   // 0 = events generator disabled, 1 = enabled
     	/* THIS IS IT */
         long start = System.currentTimeMillis();
         long startingMemoryUse = getUsedMemory();
@@ -161,7 +162,7 @@ public class Main {
                 System.out.println("Simulating Events");
                 kernel.simulate(24*60*60);
                 WriteLogsV3 writer = new WriteLogsV3(0,args[4],Topology.numberOfNodes);
-                writer.act();
+                writer.act(EventsGenerator);
             } else {
                 for(int i=1;i<=Topology.numberOfNodes;i++) {
                     System.out.println("-----------------------"+i+"------------------------");

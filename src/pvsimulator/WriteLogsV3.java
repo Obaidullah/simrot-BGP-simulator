@@ -110,7 +110,7 @@ public class WriteLogsV3 extends Unit {
 		return line;
 	}
 
-	public void act() {
+	public void act(int enabler) {
 		try {
 			FileOutputStream fout = new FileOutputStream(logFile);
 			PrintStream ps = new PrintStream(fout);
@@ -188,31 +188,34 @@ public class WriteLogsV3 extends Unit {
 
 				}
 			}
-			/*
-			FileWriter fileevent = new FileWriter("generated_event.txt", true);
-			BufferedWriter bufferevent = new BufferedWriter(fileevent);
-			int numberOfEvent = 50;
-			for (int num = 1; num <= numberOfEvent; num++) {
-				String out = EventEditor(listofnodes);
-				if (num == numberOfEvent) {
-					if (out != "") {
-						bufferevent.write(out);
-						bufferevent.flush();
-					}
+			if (enabler == 1) {
+				FileWriter fileevent = new FileWriter("generated_event.txt",
+						true);
+				BufferedWriter bufferevent = new BufferedWriter(fileevent);
+				int numberOfEvent = 50;
+				for (int num = 1; num <= numberOfEvent; num++) {
+					String out = EventEditor(listofnodes);
+					if (num == numberOfEvent) {
+						if (out != "") {
+							bufferevent.write(out);
+							bufferevent.flush();
+						}
 
-				} else {
-					if (out != "") {
-						bufferevent.write(out + "\n");
-						bufferevent.flush();
-					}
+					} else {
+						if (out != "") {
+							bufferevent.write(out + "\n");
+							bufferevent.flush();
+						}
 
+					}
+					// bufferevent.flush();
 				}
-				// bufferevent.flush();
+				System.out.println("Stored prefixes : "
+						+ listofprefix.toString());
+				System.out.println("Prefix lenght : " + listofprefix.size());
+				bufferevent.close();
 			}
-			System.out.println("Stored prefixes : " + listofprefix.toString());
-			System.out.println("Prefix lenght : " + listofprefix.size());
-			bufferevent.close();
-			*/
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
