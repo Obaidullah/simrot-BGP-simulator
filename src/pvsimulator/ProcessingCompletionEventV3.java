@@ -147,7 +147,7 @@ public class ProcessingCompletionEventV3 extends Unit{
                         int oldPathNextHop = rib.getBestPathNextHop(prefix);
                         if(rib.entryExist(prefix,src)) {
                             rib.replaceEntry(prefix,src,path,false);
-                            System.out.print("\nreplace prefix "+this.message.getAnnouncedPrefix()+" at node "+this.processor.getAS()+",  TIME:   "+kernel.getTime()+"\n");//------------------------------------------------------------------------------
+                            //System.out.print("\nreplace prefix "+this.message.getAnnouncedPrefix()+" at node "+this.processor.getAS()+",  TIME:   "+kernel.getTime()+"\n");//------------------------------------------------------------------------------
                         } else {
                             rib.addEntry(prefix,src,path);
                             buffer.write("2\t"+GetTime.getNextSchedule(kernel)+"\n");

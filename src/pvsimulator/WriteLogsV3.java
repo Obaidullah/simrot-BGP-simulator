@@ -176,46 +176,36 @@ public class WriteLogsV3 extends Unit {
 					// getTime.getProcessingTime(kernel) + "\n");
 					// bufout.write("Update node " +i + ": " +
 					// System.currentTimeMillis()+ "\n");
-					for (int k = 0; k < node.getAttachedNetworks().size(); k++) {
-						listofprefix.add(node.getAttachedNetworks().get(k));
+					/*
+					 * for (int k = 0; k < node.getAttachedNetworks().size();
+					 * k++) {
+					 * listofprefix.add(node.getAttachedNetworks().get(k)); }
+					 * listofnodes.add(node);
+					 */
+					if (enabler == 1) {
+						bufout.write("RIB of node " + i + ": \n\n"
+								+ node.getRib() + "\n");
+						bufout.flush();
 					}
-					listofnodes.add(node);
-					bufout.write("RIB of node " + i + ": \n\n" + node.getRib()
-							+ "\n");
-					bufout.flush();
-
-					// }
-
 				}
 			}
-			if (enabler == 1) {
-				FileWriter fileevent = new FileWriter("generated_event.txt",
-						true);
-				BufferedWriter bufferevent = new BufferedWriter(fileevent);
-				int numberOfEvent = 50;
-				for (int num = 1; num <= numberOfEvent; num++) {
-					String out = EventEditor(listofnodes);
-					if (num == numberOfEvent) {
-						if (out != "") {
-							bufferevent.write(out);
-							bufferevent.flush();
-						}
-
-					} else {
-						if (out != "") {
-							bufferevent.write(out + "\n");
-							bufferevent.flush();
-						}
-
-					}
-					// bufferevent.flush();
-				}
-				System.out.println("Stored prefixes : "
-						+ listofprefix.toString());
-				System.out.println("Prefix lenght : " + listofprefix.size());
-				bufferevent.close();
-			}
-
+			bufout.close();
+			/*
+			 * if (enabler == 1) { FileWriter fileevent = new
+			 * FileWriter("generated_event.txt", true); BufferedWriter
+			 * bufferevent = new BufferedWriter(fileevent); int numberOfEvent =
+			 * 50; for (int num = 1; num <= numberOfEvent; num++) { String out =
+			 * EventEditor(listofnodes); if (num == numberOfEvent) { if (out !=
+			 * "") { bufferevent.write(out); bufferevent.flush(); }
+			 * 
+			 * } else { if (out != "") { bufferevent.write(out + "\n");
+			 * bufferevent.flush(); }
+			 * 
+			 * } // bufferevent.flush(); }
+			 * System.out.println("Stored prefixes : " +
+			 * listofprefix.toString()); System.out.println("Prefix lenght : " +
+			 * listofprefix.size()); bufferevent.close(); }
+			 */
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
