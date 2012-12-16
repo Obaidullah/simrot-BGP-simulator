@@ -59,7 +59,7 @@ public class Main {
         return usedMemory;
     }
     public static void main(String[] args) throws Exception {
-    	/* ADDED BY GIULIO */
+        /* ADDED BY GIULIO */
     	Topology.parseTopologyV2(args[0],false);
     	for(int i=1;i<=Topology.numberOfNodes;i++)
         {
@@ -179,4 +179,3 @@ public class Main {
     }
     
 }
-
